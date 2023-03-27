@@ -39,6 +39,14 @@ public class FilmServiceImpl implements IFilmService {
         return openMovieGateway.findFilm(filmTitle).getSearch();
     }
 
+    public List<Film> findByDirector(String director) {
+        return filmRepository.filterByDirector(director);
+    }
+
+    public List<Film> findByTitle(String title) {
+        return filmRepository.filterByTitle(title);
+    }
+
     @Override
     public void delete(String imdbID) {
         filmRepository.deleteById(imdbID);

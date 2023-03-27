@@ -34,9 +34,19 @@ public class FilmController {
         filmService.delete(imdbID);
     }
 
-    @GetMapping("/mymovies/findbyid")
+    @GetMapping("/mymovies/filter-by-id")
     public Film get(@RequestParam(name = "imdbID") String imdbID) {
         return filmService.get(imdbID);
+    }
+
+    @GetMapping("mymovies/filter-by-director")
+    public List<Film> getByDirector(@RequestParam(name = "director") String director) {
+        return filmService.findByDirector(director);
+    }
+
+    @GetMapping("mymovies/filter-by-title")
+    public List<Film> getByTitle(@RequestParam(name = "title") String title) {
+        return filmService.findByTitle(title);
     }
 
 }
