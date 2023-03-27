@@ -15,7 +15,5 @@ public interface IFilmService {
 
     List<Search> getFilms(String filmTitle);
 
-    Film update(String imdbID, Film film);
-
     void delete(String imdbID);
 }

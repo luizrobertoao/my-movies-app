@@ -40,12 +40,7 @@ public class FilmServiceImpl implements IFilmService {
     }
 
     @Override
-    public Film update(String imdbID, Film film) {
-        return null;
-    }
-
-    @Override
     public void delete(String imdbID) {
-
+        filmRepository.deleteById(imdbID);
     }
 }

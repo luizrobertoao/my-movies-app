@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-//@RequestMapping("/films")
 public class FilmController {
 
     @Autowired
@@ -28,6 +27,11 @@ public class FilmController {
     @GetMapping("/mymovies")
     public List<Film> getAll() {
         return filmService.getAll();
+    }
+
+    @DeleteMapping("/mymovies")
+    public void delete(@RequestParam(name = "imdbID") String imdbID) {
+        filmService.delete(imdbID);
     }
 
     @GetMapping("/mymovies/findbyid")
