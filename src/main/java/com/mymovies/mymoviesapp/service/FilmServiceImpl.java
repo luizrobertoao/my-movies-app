@@ -1,5 +1,8 @@
 package com.mymovies.mymoviesapp.service;
 
+import com.mymovies.mymoviesapp.gateway.OpenMovieGateway;
+import com.mymovies.mymoviesapp.gateway.entity.OpenMovieResponse;
+import com.mymovies.mymoviesapp.gateway.entity.Search;
 import com.mymovies.mymoviesapp.model.Film;
 import com.mymovies.mymoviesapp.repository.FilmRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,8 +16,11 @@ public class FilmServiceImpl implements IFilmService {
     @Autowired
     private FilmRepository filmRepository;
 
+    @Autowired
+    private OpenMovieGateway openMovieGateway;
+
     @Override
-    public Film create(Film film) {
+    public Film create(String filmTitle) {
         return null;
     }
 
@@ -26,6 +32,11 @@ public class FilmServiceImpl implements IFilmService {
     @Override
     public List<Film> getAll() {
         return null;
+    }
+
+    @Override
+    public List<Search> getFilms(String filmTitle) {
+        return openMovieGateway.findFilm(filmTitle).getSearch();
     }
 
     @Override
