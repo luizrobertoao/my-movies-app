@@ -26,7 +26,7 @@ public class FilmServiceImpl implements IFilmService {
 
     @Override
     public Film get(String imdbID) {
-        return null;
+        return filmRepository.findById(imdbID).get();
     }
 
     @Override

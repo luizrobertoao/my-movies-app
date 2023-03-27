@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/films")
+//@RequestMapping("/films")
 public class FilmController {
 
     @Autowired
@@ -20,8 +20,13 @@ public class FilmController {
         return filmService.getFilms(filmTitle);
     }
 
-    @PostMapping
+    @PostMapping("/mymovies")
     public Film create(@RequestParam(name = "imdbID") String imdbID) {
         return filmService.create(imdbID);
+    }
+
+    @GetMapping("/mymovies/findbyid")
+    public Film get(@RequestParam(name = "imdbID") String imdbID) {
+        return filmService.get(imdbID);
     }
 }
