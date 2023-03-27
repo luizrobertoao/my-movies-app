@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface IFilmService {
 
-    Film create(String filmTitle);
+    Film create(String imdbID);
 
     Film get(String imdbID);
 

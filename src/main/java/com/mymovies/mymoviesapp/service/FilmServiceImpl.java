@@ -20,8 +20,8 @@ public class FilmServiceImpl implements IFilmService {
     private OpenMovieGateway openMovieGateway;
 
     @Override
-    public Film create(String filmTitle) {
-        return null;
+    public Film create(String imdbID) {
+        return filmRepository.save(openMovieGateway.findFilmById(imdbID));
     }
 
     @Override
