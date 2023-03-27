@@ -31,7 +31,7 @@ public class FilmServiceImpl implements IFilmService {
 
     @Override
     public List<Film> getAll() {
-        return null;
+        return filmRepository.findAll();
     }
 
     @Override

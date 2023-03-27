@@ -25,8 +25,14 @@ public class FilmController {
         return filmService.create(imdbID);
     }
 
+    @GetMapping("/mymovies")
+    public List<Film> getAll() {
+        return filmService.getAll();
+    }
+
     @GetMapping("/mymovies/findbyid")
     public Film get(@RequestParam(name = "imdbID") String imdbID) {
         return filmService.get(imdbID);
     }
+
 }
