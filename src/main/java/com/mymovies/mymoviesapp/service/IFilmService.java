@@ -1,7 +1,7 @@
 package com.mymovies.mymoviesapp.service;
 
-import com.mymovies.mymoviesapp.gateway.entity.Search;
 import com.mymovies.mymoviesapp.model.Film;
+import com.mymovies.mymoviesapp.service.dto.FilmServiceDto;
 
 import java.util.List;
 
@@ -13,7 +13,9 @@ public interface IFilmService {
 
     List<Film> getAll();
 
-    List<Search> getFilms(String filmTitle);
+//    Example of exception handling by the own application
+//    List<Search> getFilms(String filmTitle) throws FilmNotFoundException;
+    FilmServiceDto getFilms(String filmTitle);
 
     void delete(String imdbID);
 }

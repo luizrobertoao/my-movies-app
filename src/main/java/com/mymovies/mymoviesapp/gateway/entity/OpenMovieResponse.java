@@ -12,17 +12,22 @@ import java.util.List;
 @NoArgsConstructor
 public class OpenMovieResponse {
 
+    @JsonProperty("Error")
+    private String error;
+
     @JsonProperty("Search")
     private List<Search> search;
 
     @JsonProperty("totalResults")
     private String totalResults;
 
+    @JsonProperty("Response")
     private Boolean response;
 
-    @JsonProperty("Response")
-    public void setResponse(String response) {
-        this.response = Boolean.valueOf(response);
-    }
+
+//    @JsonProperty("Response")
+//    public void setResponse(String response) {
+//        this.response = Boolean.valueOf(response);
+//    }
 
 }
